@@ -1,1 +1,13 @@
 @import "functions";
+
+@import url(https://fonts.googleapis.com/css?family=RobotoDraft&lang=en);
+
+ng-md-icon {
+  margin: auto;
+  background-repeat: no-repeat no-repeat;
+  display: inline-block;
+  vertical-align: text-bottom;
+  fill: currentColor;
+  height: 24px;
+  width: 24px;
+}
