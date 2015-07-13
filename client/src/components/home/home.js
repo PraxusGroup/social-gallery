@@ -1,4 +1,7 @@
-angular.module('app.home', [])
-  .controller('HomeController', [function () {
-    this.name = 'Friend';
-  }]);
+angular
+  .module('app.home', [])
+  .controller('HomeController', [HomeController]);
+
+function HomeController () {
+
+}

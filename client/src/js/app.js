@@ -1,4 +1,5 @@
-angular.module('social-gallery', [
+angular
+  .module('social-gallery', [
     'ngMaterial',
     'ngMdIcons',
     'ngNewRouter',
