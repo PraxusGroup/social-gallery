@@ -29,7 +29,7 @@ gulp.task('compass', function() {
     .pipe(plumber(plumberErrorHandler))
     .pipe(compass({
       css: 'client/src/css',
-      sass: 'client/src/css/sass',
+      sass: 'client/src/css/scss',
       image: 'client/src/images',
       sourcemap: true
     }))
