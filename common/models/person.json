@@ -1,0 +1,35 @@
+{
+  "name": "Person",
+  "plural": "people",
+  "base": "User",
+  "idInjection": true,
+  "properties": {
+    "type": {
+      "type": "string",
+      "default": "standard"
+    },
+    "fullname": "string",
+    "createdOn": {
+      "type": "date",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "profilePhoto": {
+      "type": "embedsOne",
+      "model": "Metadata",
+      "property": "avatar",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
+    "media": {
+      "type": "hasMany",
+      "model": "Metadata"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

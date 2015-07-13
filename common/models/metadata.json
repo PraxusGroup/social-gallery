@@ -1,0 +1,54 @@
+{
+  "name": "Metadata",
+  "plural": "metadata",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "caption": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "uploadIP": {
+      "type": "string"
+    },
+    "views": {
+      "type": "number",
+      "default": 0
+    },
+    "createdOn": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "data": {
+      "type": "object",
+      "required": true,
+      "default": {
+        "container": "",
+        "filename": "",
+        "dataUrl": "",
+        "peakUrl": ""
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "person": {
+      "type": "belongsTo",
+      "model": "Person"
+    }
+  },
+  "acls": [],
+  "methods": []
+}
