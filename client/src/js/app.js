@@ -68,8 +68,14 @@ function AppController ($rootScope, $timeout, Person, LoopBackAuth) {
   };
 
   $rootScope.logout = function(){
-    Person.logout();
-    $rootScope.currentUser = null;
+    enableLoading();
+
+    Person.logout().$promise
+      .then(function(){
+        $rootScope.currentUser = null;
+      })
+      .finally(disableLoading);
+
   };
 
   function processAuth(response){
@@ -89,7 +95,9 @@ function AppController ($rootScope, $timeout, Person, LoopBackAuth) {
   }
 
   function disableLoading(){
-    $rootScope.loading = false;
+    $timeout(function(){
+      $rootScope.loading = false;
+    });
   }
 
 }

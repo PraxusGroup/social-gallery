@@ -26,13 +26,10 @@ function RegisterController ($scope, $rootScope, Person, LoopBackAuth) {
   function afterRegister(response){
     Materialize.toast('Success!! Logging you in.', 4000);
 
-    $rootScope.loginUser({
-      email: $scope.register.email,
-      password: $scope.register.password
-    })
-    .then(function(){
-      $('#RegisterModal').closeModal();
-    });
+    $rootScope.loginUser($scope.register)
+      .then(function(){
+        $('#RegisterModal').closeModal();
+      });
   }
 
   function registerError(error){

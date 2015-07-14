@@ -23,7 +23,14 @@
         <a data-activates="mobile-demo" class="button-collapse">
           <ng-md-icon icon="menu" style="fill: white" size="36"></ng-md-icon>
         </a>
-        <ul class="right hide-on-med-and-down">
+        <ul class="right hide-on-med-and-down" ng-if="!$root.currentUser">
+          <li><a class="waves-effect waves-light" ng-click="openLoginModal()">Login</a></li>
+          <li><a class="waves-effect waves-light" ng-click="openRegisterModal()">Register</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down" ng-if="$root.currentUser">
+          <li><a class="waves-effect waves-light" ng-click="$root.logout()">Logout</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
           <li>
             <a class="waves-effect waves-light"
             ng-if="!$root.currentUser"
@@ -39,10 +46,6 @@
             ng-if="$root.currentUser"
             ng-click="$root.logout()">Logout</a>
           </li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a class="waves-effect waves-light" ng-click="openLoginModal()">Login</a></li>
-          <li><a class="waves-effect waves-light" ng-click="openRegisterModal()">Register</a></li>
         </ul>
       </div>
     </nav>

@@ -115,10 +115,10 @@ nav .brand-logo {
 }
 
 .top-loader.ng-leave {
-  -moz-transition-delay: 1.5s;
-  -o-transition-delay: 1.5s;
-  -webkit-transition-delay: 1.5s;
-  transition-delay: 1.5s;
+  -moz-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
 }
 
 .top-loader.ng-enter,
