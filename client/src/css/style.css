@@ -7,7 +7,6 @@
 /*
 * Currency
 */
-@import url(https://fonts.googleapis.com/css?family=RobotoDraft&lang=en);
 /*
 * Clearfix
 */
@@ -89,6 +88,10 @@ ng-md-icon {
   fill: currentColor;
   height: 24px;
   width: 24px;
+}
+
+nav .brand-logo {
+  padding: 0px 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

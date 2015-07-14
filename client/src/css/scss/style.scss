@@ -1,7 +1,5 @@
 @import "functions";
 
-@import url(https://fonts.googleapis.com/css?family=RobotoDraft&lang=en);
-
 ng-md-icon {
   margin: auto;
   background-repeat: no-repeat no-repeat;
@@ -10,4 +8,8 @@ ng-md-icon {
   fill: currentColor;
   height: 24px;
   width: 24px;
+}
+
+nav .brand-logo{
+  padding: 0px 15px;
 }

@@ -32,16 +32,7 @@
     /* jQuery+Angular */
     "$": false,
     "angular": false,
+    "Materialize": false
     /* custom general.js  */
-    "deactivePushy": false,
-    "getYoutubeId": false,
-    "getVimeoId": false,
-    "uniqBy": false,
-    "fullHeight": false,
-    "requestAnimationFrame": false,
-    "generateAvatar": false,
-    "balanceHeader": false,
-    "geo_position_js": false,
-    "MD5": false
   }
 }

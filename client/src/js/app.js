@@ -1,20 +1,67 @@
 angular
   .module('social-gallery', [
-    'ngMaterial',
     'ngMdIcons',
-    'ngNewRouter',
-    'app.home',
-    'app.login',
-    'app.register'
+    'ui.router',
+    'lbServices'
   ])
-  .controller('AppController', ['$router', AppController]);
+  .config([
+    '$stateProvider',
+    '$urlRouterProvider',
+    AppConfig
+  ])
+  .controller('AppController', [
+    '$rootScope',
+    'Person',
+    'LoopBackAuth',
+    AppController
+  ]);
 
-AppController.$routeConfig = [
-  { path: '/',           component: 'home'      },
-  { path: '/login',      component: 'login'     },
-  { path: '/register',   component: 'register'  }
-];
+function AppConfig ($stateProvider, $urlRouterProvider){
+  $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: 'components/home/home.html',
+      controller: 'HomeController'
+    })
+    .state('homePage', {
+      url: '/home',
+      templateUrl: 'components/home/home.html',
+      controller: 'HomeController'
+    });
 
-function AppController ($router) {
+  $urlRouterProvider.otherwise('home');
+}
+
+function AppController ($rootScope, Person, LoopBackAuth) {
+
+  $(".button-collapse").sideNav();
+  $('.modal-trigger').leanModal();
+
+  Person.getCurrent(function(response){
+      $rootScope.currentUser = response;
+    },
+    function(error){
+      localStorage.clear();
+    });
+
+  //@TODO move this to a service that handles login/register better
+
+  $rootScope.loginUser = function (loginFields){
+    var promise = Person.login(loginFields).$promise;
+
+    promise.then(processAuth, authError);
+
+    return promise;
+  };
+
+  function processAuth(response){
+    LoopBackAuth.currentUserId = response.userId;
+    LoopBackAuth.accessTokenId = response.id;
+    LoopBackAuth.save();
+  }
+
+  function authError(error){
+
+  }
 
 }

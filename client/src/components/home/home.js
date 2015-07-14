@@ -1,7 +1,11 @@
 angular
-  .module('app.home', [])
-  .controller('HomeController', [HomeController]);
+  .module('social-gallery')
+  .controller('HomeController', [
+      '$scope',
+      '$rootScope',
+      HomeController
+    ]);
 
-function HomeController () {
-
+function HomeController ($scope, $rootScope) {
+  $scope.name = "Hello";
 }
