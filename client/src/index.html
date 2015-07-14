@@ -17,15 +17,28 @@
   </head>
   <body>
 
-    <nav ng-controller="NavController">
+    <nav ng-controller="NavController" ng-cloak>
       <div class="nav-wrapper red darken-2">
         <a class="brand-logo" ng-cloak>Social Gallery</a>
         <a data-activates="mobile-demo" class="button-collapse">
           <ng-md-icon icon="menu" style="fill: white" size="36"></ng-md-icon>
         </a>
         <ul class="right hide-on-med-and-down">
-          <li><a class="waves-effect waves-light" ng-click="openLoginModal()">Login</a></li>
-          <li><a class="waves-effect waves-light" ng-click="openRegisterModal()">Register</a></li>
+          <li>
+            <a class="waves-effect waves-light"
+            ng-if="!$root.currentUser"
+            ng-click="openLoginModal()">Login</a>
+          </li>
+          <li>
+            <a class="waves-effect waves-light"
+            ng-if="!$root.currentUser"
+            ng-click="openRegisterModal()">Register</a>
+          </li>
+          <li>
+            <a class="waves-effect waves-light"
+            ng-if="$root.currentUser"
+            ng-click="$root.logout()">Logout</a>
+          </li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a class="waves-effect waves-light" ng-click="openLoginModal()">Login</a></li>
@@ -81,7 +94,49 @@
 
       </form>
     </div>
+
+    <div ng-controller="LoginController" id="LoginModal" class="modal">
+      <form ng-submit="submitLogin()">
+
+        <div class="modal-content grey-text text-darken-3">
+
+          <h4>Login</h4>
+
+          <div class="row">
+
+            <div class="col s12">
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="loginEmail" type="email" ng-model="login.email" class="validate" required>
+                  <label for="loginEmail">Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="loginPassword" type="password" ng-model="login.password" required>
+                  <label for="loginPassword">Password</label>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <a class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+          <button type="submit" class="modal-action waves-effect waves-green btn-flat">Login</button>
+        </div>
+
+      </form>
+    </div>
     <!-- END Modal Structure -->
+
+    <div class="progress top-loader" ng-if="$root.loading">
+      <div class="indeterminate"></div>
+    </div>
 
     <div ui-view></div>
 

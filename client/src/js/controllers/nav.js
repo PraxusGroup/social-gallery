@@ -14,4 +14,9 @@ function NavController($scope, $rootScope) {
     $('#RegisterModal').openModal();
   };
 
+  $scope.openLoginModal = function(){
+    $('.button-collapse').sideNav('hide');
+    $('#LoginModal').openModal();
+  };
+
 }

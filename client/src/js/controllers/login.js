@@ -3,7 +3,14 @@ angular
   .controller('LoginController', ['$scope', '$rootScope', LoginController]);
 
 function LoginController ($scope, $rootScope) {
-  $scope.register = function(){
-    console.log('hello');
+  
+  $scope.submitLogin = function(){
+
+    $rootScope.loginUser($scope.login)
+      .then(function(){
+        $('#LoginModal').closeModal();
+      });
+
   };
+
 }
