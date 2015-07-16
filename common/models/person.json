@@ -16,7 +16,7 @@
   },
   "validations": [],
   "relations": {
-    "profilePhoto": {
+    "avatar": {
       "type": "embedsOne",
       "model": "Metadata",
       "property": "avatar",
@@ -25,9 +25,27 @@
         "forceId": false
       }
     },
+    "social": {
+      "type": "embedsMany",
+      "model": "Social",
+      "property": "social",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
     "media": {
       "type": "hasMany",
       "model": "Metadata"
+    },
+    "favorites": {
+      "type": "hasMany",
+      "model": "Favorite"
+    },
+    "favoriteMedia": {
+      "type": "hasMany",
+      "model": "Metadata",
+      "through": "Favorite"
     }
   },
   "acls": [],

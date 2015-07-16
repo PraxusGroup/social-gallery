@@ -155,27 +155,27 @@ module.factory(
           method: "PUT"
         },
 
-        // INTERNAL. Use Person.profilePhoto() instead.
-        "prototype$__get__profilePhoto": {
-          url: urlBase + "/people/:id/profilePhoto",
+        // INTERNAL. Use Person.avatar() instead.
+        "prototype$__get__avatar": {
+          url: urlBase + "/people/:id/avatar",
           method: "GET"
         },
 
-        // INTERNAL. Use Person.profilePhoto.create() instead.
-        "prototype$__create__profilePhoto": {
-          url: urlBase + "/people/:id/profilePhoto",
+        // INTERNAL. Use Person.avatar.create() instead.
+        "prototype$__create__avatar": {
+          url: urlBase + "/people/:id/avatar",
           method: "POST"
         },
 
-        // INTERNAL. Use Person.profilePhoto.update() instead.
-        "prototype$__update__profilePhoto": {
-          url: urlBase + "/people/:id/profilePhoto",
+        // INTERNAL. Use Person.avatar.update() instead.
+        "prototype$__update__avatar": {
+          url: urlBase + "/people/:id/avatar",
           method: "PUT"
         },
 
-        // INTERNAL. Use Person.profilePhoto.destroy() instead.
-        "prototype$__destroy__profilePhoto": {
-          url: urlBase + "/people/:id/profilePhoto",
+        // INTERNAL. Use Person.avatar.destroy() instead.
+        "prototype$__destroy__avatar": {
+          url: urlBase + "/people/:id/avatar",
           method: "DELETE"
         },
 
@@ -1177,27 +1177,27 @@ module.factory(
 
     /**
      * @ngdoc object
-     * @name lbServices.Person.profilePhoto
-     * @header lbServices.Person.profilePhoto
+     * @name lbServices.Person.avatar
+     * @header lbServices.Person.avatar
      * @object
      * @description
      *
-     * The object `Person.profilePhoto` groups methods
+     * The object `Person.avatar` groups methods
      * manipulating `Metadata` instances related to `Person`.
      *
-     * Call {@link lbServices.Person#profilePhoto Person.profilePhoto()}
+     * Call {@link lbServices.Person#avatar Person.avatar()}
      * to query all related instances.
      */
 
 
         /**
          * @ngdoc method
-         * @name lbServices.Person#profilePhoto
+         * @name lbServices.Person#avatar
          * @methodOf lbServices.Person
          *
          * @description
          *
-         * Fetches hasOne relation profilePhoto.
+         * Fetches hasOne relation avatar.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1220,20 +1220,20 @@ module.factory(
          * This usually means the response is a `Metadata` object.)
          * </em>
          */
-        R.profilePhoto = function() {
+        R.avatar = function() {
           var TargetResource = $injector.get("Metadata");
-          var action = TargetResource["::get::Person::profilePhoto"];
+          var action = TargetResource["::get::Person::avatar"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Person.profilePhoto#create
-         * @methodOf lbServices.Person.profilePhoto
+         * @name lbServices.Person.avatar#create
+         * @methodOf lbServices.Person.avatar
          *
          * @description
          *
-         * Creates a new instance in profilePhoto of this model.
+         * Creates a new instance in avatar of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1258,20 +1258,20 @@ module.factory(
          * This usually means the response is a `Metadata` object.)
          * </em>
          */
-        R.profilePhoto.create = function() {
+        R.avatar.create = function() {
           var TargetResource = $injector.get("Metadata");
-          var action = TargetResource["::create::Person::profilePhoto"];
+          var action = TargetResource["::create::Person::avatar"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Person.profilePhoto#createMany
-         * @methodOf lbServices.Person.profilePhoto
+         * @name lbServices.Person.avatar#createMany
+         * @methodOf lbServices.Person.avatar
          *
          * @description
          *
-         * Creates a new instance in profilePhoto of this model.
+         * Creates a new instance in avatar of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1296,20 +1296,20 @@ module.factory(
          * This usually means the response is a `Metadata` object.)
          * </em>
          */
-        R.profilePhoto.createMany = function() {
+        R.avatar.createMany = function() {
           var TargetResource = $injector.get("Metadata");
-          var action = TargetResource["::createMany::Person::profilePhoto"];
+          var action = TargetResource["::createMany::Person::avatar"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Person.profilePhoto#destroy
-         * @methodOf lbServices.Person.profilePhoto
+         * @name lbServices.Person.avatar#destroy
+         * @methodOf lbServices.Person.avatar
          *
          * @description
          *
-         * Deletes profilePhoto of this model.
+         * Deletes avatar of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1327,20 +1327,20 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.profilePhoto.destroy = function() {
+        R.avatar.destroy = function() {
           var TargetResource = $injector.get("Metadata");
-          var action = TargetResource["::destroy::Person::profilePhoto"];
+          var action = TargetResource["::destroy::Person::avatar"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Person.profilePhoto#update
-         * @methodOf lbServices.Person.profilePhoto
+         * @name lbServices.Person.avatar#update
+         * @methodOf lbServices.Person.avatar
          *
          * @description
          *
-         * Update profilePhoto of this model.
+         * Update avatar of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1365,9 +1365,9 @@ module.factory(
          * This usually means the response is a `Metadata` object.)
          * </em>
          */
-        R.profilePhoto.update = function() {
+        R.avatar.update = function() {
           var TargetResource = $injector.get("Metadata");
-          var action = TargetResource["::update::Person::profilePhoto"];
+          var action = TargetResource["::update::Person::avatar"];
           return action.apply(R, arguments);
         };
     /**
@@ -1703,6 +1703,58 @@ module.factory(
         // INTERNAL. Use Metadata.person() instead.
         "prototype$__get__person": {
           url: urlBase + "/metadata/:id/person",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Metadata.favorited.findById() instead.
+        "prototype$__findById__favorited": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/metadata/:id/favorited/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Metadata.favorited.destroyById() instead.
+        "prototype$__destroyById__favorited": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/metadata/:id/favorited/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Metadata.favorited.updateById() instead.
+        "prototype$__updateById__favorited": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/metadata/:id/favorited/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Metadata.favorited() instead.
+        "prototype$__get__favorited": {
+          isArray: true,
+          url: urlBase + "/metadata/:id/favorited",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Metadata.favorited.create() instead.
+        "prototype$__create__favorited": {
+          url: urlBase + "/metadata/:id/favorited",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Metadata.favorited.destroyAll() instead.
+        "prototype$__delete__favorited": {
+          url: urlBase + "/metadata/:id/favorited",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Metadata.favorited.count() instead.
+        "prototype$__count__favorited": {
+          url: urlBase + "/metadata/:id/favorited/count",
           method: "GET"
         },
 
@@ -2125,34 +2177,34 @@ module.factory(
           method: "POST"
         },
 
-        // INTERNAL. Use Person.profilePhoto() instead.
-        "::get::Person::profilePhoto": {
-          url: urlBase + "/people/:id/profilePhoto",
+        // INTERNAL. Use Person.avatar() instead.
+        "::get::Person::avatar": {
+          url: urlBase + "/people/:id/avatar",
           method: "GET"
         },
 
-        // INTERNAL. Use Person.profilePhoto.create() instead.
-        "::create::Person::profilePhoto": {
-          url: urlBase + "/people/:id/profilePhoto",
+        // INTERNAL. Use Person.avatar.create() instead.
+        "::create::Person::avatar": {
+          url: urlBase + "/people/:id/avatar",
           method: "POST"
         },
 
-        // INTERNAL. Use Person.profilePhoto.createMany() instead.
-        "::createMany::Person::profilePhoto": {
+        // INTERNAL. Use Person.avatar.createMany() instead.
+        "::createMany::Person::avatar": {
           isArray: true,
-          url: urlBase + "/people/:id/profilePhoto",
+          url: urlBase + "/people/:id/avatar",
           method: "POST"
         },
 
-        // INTERNAL. Use Person.profilePhoto.update() instead.
-        "::update::Person::profilePhoto": {
-          url: urlBase + "/people/:id/profilePhoto",
+        // INTERNAL. Use Person.avatar.update() instead.
+        "::update::Person::avatar": {
+          url: urlBase + "/people/:id/avatar",
           method: "PUT"
         },
 
-        // INTERNAL. Use Person.profilePhoto.destroy() instead.
-        "::destroy::Person::profilePhoto": {
-          url: urlBase + "/people/:id/profilePhoto",
+        // INTERNAL. Use Person.avatar.destroy() instead.
+        "::destroy::Person::avatar": {
+          url: urlBase + "/people/:id/avatar",
           method: "DELETE"
         },
 
@@ -2212,6 +2264,65 @@ module.factory(
         // INTERNAL. Use Person.media.count() instead.
         "::count::Person::media": {
           url: urlBase + "/people/:id/media/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Metadata.favorited.findById() instead.
+        "::findById::Metadata::favorited": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/metadata/:id/favorited/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Metadata.favorited.destroyById() instead.
+        "::destroyById::Metadata::favorited": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/metadata/:id/favorited/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Metadata.favorited.updateById() instead.
+        "::updateById::Metadata::favorited": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/metadata/:id/favorited/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Metadata.favorited() instead.
+        "::get::Metadata::favorited": {
+          isArray: true,
+          url: urlBase + "/metadata/:id/favorited",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Metadata.favorited.create() instead.
+        "::create::Metadata::favorited": {
+          url: urlBase + "/metadata/:id/favorited",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Metadata.favorited.createMany() instead.
+        "::createMany::Metadata::favorited": {
+          isArray: true,
+          url: urlBase + "/metadata/:id/favorited",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Metadata.favorited.destroyAll() instead.
+        "::delete::Metadata::favorited": {
+          url: urlBase + "/metadata/:id/favorited",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Metadata.favorited.count() instead.
+        "::count::Metadata::favorited": {
+          url: urlBase + "/metadata/:id/favorited/count",
           method: "GET"
         },
       }
@@ -2384,6 +2495,307 @@ module.factory(
         R.person = function() {
           var TargetResource = $injector.get("Person");
           var action = TargetResource["::get::Metadata::person"];
+          return action.apply(R, arguments);
+        };
+    /**
+     * @ngdoc object
+     * @name lbServices.Metadata.favorited
+     * @header lbServices.Metadata.favorited
+     * @object
+     * @description
+     *
+     * The object `Metadata.favorited` groups methods
+     * manipulating `Metadata` instances related to `Metadata`.
+     *
+     * Call {@link lbServices.Metadata#favorited Metadata.favorited()}
+     * to query all related instances.
+     */
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Metadata#favorited
+         * @methodOf lbServices.Metadata
+         *
+         * @description
+         *
+         * Queries favorited of Metadata.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favorited = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::get::Metadata::favorited"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Metadata.favorited#count
+         * @methodOf lbServices.Metadata.favorited
+         *
+         * @description
+         *
+         * Counts favorited of Metadata.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        R.favorited.count = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::count::Metadata::favorited"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Metadata.favorited#create
+         * @methodOf lbServices.Metadata.favorited
+         *
+         * @description
+         *
+         * Creates a new instance in favorited of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favorited.create = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::create::Metadata::favorited"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Metadata.favorited#createMany
+         * @methodOf lbServices.Metadata.favorited
+         *
+         * @description
+         *
+         * Creates a new instance in favorited of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favorited.createMany = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::createMany::Metadata::favorited"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Metadata.favorited#destroyAll
+         * @methodOf lbServices.Metadata.favorited
+         *
+         * @description
+         *
+         * Deletes all favorited of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.favorited.destroyAll = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::delete::Metadata::favorited"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Metadata.favorited#destroyById
+         * @methodOf lbServices.Metadata.favorited
+         *
+         * @description
+         *
+         * Delete a related item by id for favorited.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for favorited
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.favorited.destroyById = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::destroyById::Metadata::favorited"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Metadata.favorited#findById
+         * @methodOf lbServices.Metadata.favorited
+         *
+         * @description
+         *
+         * Find a related item by id for favorited.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for favorited
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favorited.findById = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::findById::Metadata::favorited"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Metadata.favorited#updateById
+         * @methodOf lbServices.Metadata.favorited
+         *
+         * @description
+         *
+         * Update a related item by id for favorited.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for favorited
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favorited.updateById = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::updateById::Metadata::favorited"];
           return action.apply(R, arguments);
         };
 

@@ -1,0 +1,25 @@
+{
+  "name": "Favorite",
+  "plural": "favorites",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "createdOn": {
+      "type": "date",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "person": {
+      "type": "belongsTo",
+      "model": "Person"
+    },
+    "metadata": {
+      "type": "belongsTo",
+      "model": "Metadata"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Social",
+  "plural": "social",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "platform": {
+      "type": "string",
+      "description": "facebook/youtube/twitter/etc"
+    },
+    "link": "string",
+    "username": "string"
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

@@ -47,6 +47,10 @@
     "person": {
       "type": "belongsTo",
       "model": "Person"
+    },
+    "favorited": {
+      "type": "hasMany",
+      "model": "Metadata"
     }
   },
   "acls": [],

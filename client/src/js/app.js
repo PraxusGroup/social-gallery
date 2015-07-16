@@ -29,6 +29,11 @@ function AppConfig ($stateProvider, $urlRouterProvider){
       url: '/home',
       templateUrl: 'components/home/home.html',
       controller: 'HomeController'
+    })
+    .state('upload', {
+      url: '/upload',
+      templateUrl: 'components/upload/upload.html',
+      controller: 'UploadController'
     });
 
   $urlRouterProvider.otherwise('home');
@@ -52,7 +57,7 @@ function AppController ($rootScope, $timeout, Person, LoopBackAuth) {
   ///////////////////////
   ///// Auth Services
   ///////////////////////
-  //// @TODO move this to a service that handles login/register better
+  ///// @TODO move this to a service that handles login/register better
   ///////////////////////
 
   $rootScope.loginUser = function (loginFields){
