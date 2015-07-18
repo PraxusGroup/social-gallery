@@ -88,6 +88,10 @@
   display: none !important;
 }
 
+.hidden {
+  display: none;
+}
+
 ng-md-icon {
   margin: auto;
   background-repeat: no-repeat no-repeat;

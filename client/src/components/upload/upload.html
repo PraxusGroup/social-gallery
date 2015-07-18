@@ -6,7 +6,7 @@
     <form ng-submit="submitUpload()">
       <div class="col s12"><h3>Upload</h3></div>
       <div class="col s12">
-        <div class="flow-container col s12 valign-wrapper"
+        <div class="flow-container col s12 valign-wrapper fileupload"
             ng-class="{'grey darken-4 white-text': !file}"
             flow-drag-enter="style={border:'4px solid green', 'border-radius': '3px'}"
             flow-drag-leave="style={}"
@@ -14,14 +14,8 @@
           <div class="col s12 center-align valign">
             <div ng-show="!file">
               <h4>Drag and drop your image here</h4>
-              <div class="file-field input-field col s8 offset-s2 ">
-                <div class="btn">
-                  <span>Choose</span>
-                  <input type="file" flow-btn/>
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text" />
-                </div>
+              <div class="hidden">
+                <input type="file" flow-btn/>
               </div>
             </div>
 

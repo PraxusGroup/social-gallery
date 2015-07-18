@@ -10,6 +10,15 @@ angular
 function UploadController ($scope, $rootScope, $timeout) {
   $scope.name = "Upload";
 
+  $(document).on("mousedown", ".fileupload", function (e) {
+    $(this).find('input[type="file"]').trigger('click');
+    e.stopPropagation();
+  });
+
+  $(document).on("mousedown", ".fileupload input", function (e) {
+    e.stopPropagation();
+  });
+
   $rootScope.filesAdded = function($files, $event, $flow){
     $timeout(function(){
 
@@ -22,7 +31,7 @@ function UploadController ($scope, $rootScope, $timeout) {
       reader.onload = function(event) {
         $timeout(function(){
           $scope.fileData = event.srcElement.result;
-        });    
+        });
       };
 
       reader.readAsDataURL(file);
