@@ -3,11 +3,13 @@ angular
     'lbServices',
     'ngMdIcons',
     'ngAnimate',
-    'ui.router'
+    'ui.router',
+    'flow'
   ])
   .config([
     '$stateProvider',
     '$urlRouterProvider',
+    'flowFactoryProvider',
     AppConfig
   ])
   .controller('AppController', [
@@ -18,7 +20,7 @@ angular
     AppController
   ]);
 
-function AppConfig ($stateProvider, $urlRouterProvider){
+function AppConfig ($stateProvider, $urlRouterProvider, flowFactoryProvider){
   $stateProvider
     .state('home', {
       url: '/',
@@ -37,6 +39,12 @@ function AppConfig ($stateProvider, $urlRouterProvider){
     });
 
   $urlRouterProvider.otherwise('home');
+
+  flowFactoryProvider.defaults = {
+    target: 'api/media/images/upload',
+    permanentErrors: [404, 500, 501],
+    singleFile: true
+  };
 }
 
 function AppController ($rootScope, $timeout, Person, LoopBackAuth) {
@@ -44,11 +52,15 @@ function AppController ($rootScope, $timeout, Person, LoopBackAuth) {
   $(".button-collapse").sideNav();
   $('.modal-trigger').leanModal();
 
-  Person.getCurrent(function(response){
+  $rootScope.currentUser = true;
+
+  Person.getCurrent(
+    function(response){
       $rootScope.currentUser = response;
     },
     function(error){
       LoopBackAuth.clearStorage();
+      $rootScope.currentUser = null;
     });
 
   $rootScope.$on('$viewContentLoading', enableLoading);
@@ -102,7 +114,7 @@ function AppController ($rootScope, $timeout, Person, LoopBackAuth) {
   function disableLoading(){
     $timeout(function(){
       $rootScope.loading = false;
-    });
+    }, 1000);
   }
 
 }

@@ -1,1 +1,51 @@
-<h1>Hello {{name}}!</h1>
+<div class="container"
+  flow-init
+  flow-files-added="$root.filesAdded( $files, $event, $flow )">
+
+  <div class="row" flow-drop>
+    <form ng-submit="submitUpload()">
+      <div class="col s12"><h3>Upload</h3></div>
+      <div class="col s12">
+        <div class="flow-container col s12 valign-wrapper"
+            ng-class="{'grey darken-4 white-text': !file}"
+            flow-drag-enter="style={border:'4px solid green', 'border-radius': '3px'}"
+            flow-drag-leave="style={}"
+            ng-style="style">
+          <div class="col s12 center-align valign">
+            <div ng-show="!file">
+              <h4>Drag and drop your image here</h4>
+              <div class="file-field input-field col s8 offset-s2 ">
+                <div class="btn">
+                  <span>Choose</span>
+                  <input type="file" flow-btn/>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" />
+                </div>
+              </div>
+            </div>
+
+            <div ng-show="file">
+              <div class="row center-align grey-text text-darken-3">
+                <div class="card upload-card left-align">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="trick-image upload-img-preview" style="background-image: url({{ fileData }})"/>
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title grey-text text-darken-3">Card Title</span>
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                  </div>
+                  <div class="card-action right-align">
+                    <a class="waves-effect waves-teal btn-flat" flow-btn>Upload Image</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

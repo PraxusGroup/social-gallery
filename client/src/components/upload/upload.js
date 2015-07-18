@@ -3,9 +3,32 @@ angular
   .controller('UploadController', [
       '$scope',
       '$rootScope',
+      '$timeout',
       UploadController
     ]);
 
-function UploadController ($scope, $rootScope) {
+function UploadController ($scope, $rootScope, $timeout) {
   $scope.name = "Upload";
+
+  $rootScope.filesAdded = function($files, $event, $flow){
+    $timeout(function(){
+
+      var file = $flow.files[0].file;
+      var type = $flow.files[0].file.type;
+      var reader = new FileReader();
+
+      $scope.file = $flow.files[0];
+
+      reader.onload = function(event) {
+        $timeout(function(){
+          $scope.fileData = event.srcElement.result;
+        });    
+      };
+
+      reader.readAsDataURL(file);
+
+      console.log($scope.file);
+    });
+
+  };
 }

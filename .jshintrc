@@ -29,6 +29,7 @@
     "document": false,
     "navigator": false,
     "alert": false,
+    "FileReader": false,
     /* jQuery+Angular */
     "$": false,
     "angular": false,

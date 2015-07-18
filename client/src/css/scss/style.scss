@@ -22,6 +22,26 @@ nav .brand-logo{
   padding: 0px 15px;
 }
 
+.flow-container{
+  min-height:500px;
+}
+
+.upload-img-preview{
+  background-position: center center;
+  background-size:cover;
+}
+
+.trick-image{
+  width:  500px;
+  height: 500px;
+  display:inline-block;
+}
+
+.upload-card{
+  max-width:500px;
+  display:inline-block;
+}
+
 .top-loader{
   margin: 0;
   margin-bottom:-5px;
