@@ -9,6 +9,7 @@ angular
   .config([
     '$stateProvider',
     '$urlRouterProvider',
+    '$httpProvider',
     AppConfig
   ])
   .controller('AppController', [
@@ -20,7 +21,7 @@ angular
     AppController
   ]);
 
-function AppConfig ($stateProvider, $urlRouterProvider){
+function AppConfig ($stateProvider, $urlRouterProvider, $httpProvider){
   $stateProvider
     .state('home', {
       url: '/',
@@ -39,6 +40,9 @@ function AppConfig ($stateProvider, $urlRouterProvider){
     });
 
   $urlRouterProvider.otherwise('home');
+
+  $httpProvider.defaults.useXDomain = true;
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }
 
 function AppController ($rootScope, $timeout, $q, LoopBackAuth, Person) {

@@ -33,21 +33,39 @@ function UploadController ($scope, $rootScope, $timeout, Upload, Metadata) {
         .then(function(res){
           $scope.fileData = res;
           $timeout(function(){
-            transformUploadCard('ramjet-hidden');
+            transformUploadCard('#flow-container', '#upload-card', 'ramjet-hidden');
           });
         });
     }
   });
 
+  $scope.clearUpload = function(){
+    transformUploadCard('#upload-card', '#flow-container', 'ramjet-hidden');
+    $timeout(function(){
+      $scope.file = null;
+      $scope.fileData = null;
+    });
+  };
+
   $scope.submitUpload = function(){
     if($scope.file){
-
+      Upload.upload({
+          url: 'http://'+window.location.host+'/api/media/images/upload',
+          file: $scope.file
+      }).progress(function (evt) {
+          var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+          console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+      }).success(function (data, status, headers, config) {
+          console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+      }).error(function (data, status, headers, config) {
+          console.log('error status: ' + status);
+      });
     }
   };
 
-  function transformUploadCard(extraClass){
-    var from = $('#flow-container').get(0);
-    var to = $('#upload-card').get(0);
+  function transformUploadCard(from, to, extraClass){
+    from = $(from).get(0);
+    to = $(to).get(0);
     to.classList.remove('hidden');
 
     ramjet.transform(from, to, {
@@ -59,8 +77,11 @@ function UploadController ($scope, $rootScope, $timeout, Upload, Metadata) {
         // this function is called as soon as the transition completes
         to.classList.remove('hidden');
 
-        if(extraClass)
+        if(extraClass){
           to.classList.remove(extraClass);
+          from.classList.add(extraClass);
+        }
+
       }
     });
 
