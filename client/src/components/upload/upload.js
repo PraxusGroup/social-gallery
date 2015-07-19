@@ -11,18 +11,7 @@ angular
 
 function UploadController ($scope, $rootScope, $timeout, Upload, Metadata) {
 
-  $(document).ready(function() {
-    $('textarea#caption').characterCounter();
-  });
-
-  $(document).on("mousedown", ".fileupload", function (e) {
-    $(this).find('input[type="file"]').trigger('click');
-    e.stopPropagation();
-  });
-
-  $(document).on("mousedown", ".fileupload input", function (e) {
-    e.stopPropagation();
-  });
+  $('textarea#caption').characterCounter();
 
   $scope.$watch('file', function (file) {
     if((file && !Array.isArray(file)) || (Array.isArray(file) && file[0])){

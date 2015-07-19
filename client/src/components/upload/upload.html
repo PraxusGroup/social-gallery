@@ -15,22 +15,35 @@
             ng-show="!fileSelected"
             ng-init="cameraIcon = 'camera_alt'"
             ng-mouseover="cameraIcon = 'cloud_upload'"
-            ng-mouseleave="cameraIcon = 'camera_alt'"
-            ng-click="transform()">
+            ng-mouseleave="cameraIcon = 'camera_alt'">
 
           <div class="col s12 no-padding center-align valign">
 
-            <ng-md-icon
-              icon="{{cameraIcon}}"
-              style="fill: white"
-              class="upload-main-icon"
-              options='{"rotation": "none"}'
-              size="84">
-            </ng-md-icon>
+            <div ng-show="!$root.loading">
+              <ng-md-icon
+                icon="{{cameraIcon}}"
+                style="fill: white"
+                class="upload-main-icon"
+                options='{"rotation": "none"}'
+                size="84">
+              </ng-md-icon>
 
-            <h4>Upload Photos</h4>
-            <div class="hidden">
-              <input type="file" ngf-select ng-model="file"/>
+              <h4>Upload Photos</h4>
+              <div class="hidden">
+                <input type="file" ngf-select ng-model="file"/>
+              </div>
+            </div>
+
+            <div class="preloader-wrapper big active" ng-show="$root.loading && file">
+              <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
             </div>
           </div>
 

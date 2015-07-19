@@ -50,6 +50,15 @@ function AppController ($rootScope, $timeout, $q, LoopBackAuth, Person) {
   $(".button-collapse").sideNav();
   $('.modal-trigger').leanModal();
 
+  $(document).on("mousedown", ".fileupload", function (e) {
+    $(this).find('input[type="file"]').trigger('click');
+    e.stopPropagation();
+  });
+
+  $(document).on("mousedown", ".fileupload input", function (e) {
+    e.stopPropagation();
+  });
+
   $rootScope.currentUser = true;
 
   Person.getCurrent(
@@ -71,10 +80,17 @@ function AppController ($rootScope, $timeout, $q, LoopBackAuth, Person) {
   $rootScope.getFileData = function getFileData(file){
     var deferred = $q.defer();
 
+    enableLoading();
+
     var reader = new FileReader();
 
     reader.onload = function(event) {
-      deferred.resolve(compressImage(event.srcElement.result, file.type));
+
+      compressImage(event.srcElement.result, file.type)
+        .then(function(res){
+          deferred.resolve(res);
+          disableLoading();
+        });
     };
 
     reader.readAsDataURL(file);
@@ -84,36 +100,40 @@ function AppController ($rootScope, $timeout, $q, LoopBackAuth, Person) {
 
 
   function compressImage(fileData, type){
-    var imageContainer = new Image();
-    imageContainer.src = fileData;
+    var deferred = $q.defer();
 
-    var cvs = document.createElement('canvas');
-    var resize = document.createElement('canvas');
-    var width = imageContainer.naturalWidth;
-    var height = imageContainer.naturalHeight;
-    var ctx = cvs.getContext("2d");
-    var ratio;
+    setTimeout(function(){
+      var imageContainer = new Image();
+      imageContainer.src = fileData;
 
-    if(height > 1080 || width > 1080){
-      if(width > height){
-        ratio = height/width;
-        width = 1080;
-        height = ratio*width;
-      }else{
-        ratio = width/height;
-        height = 1080;
-        width = ratio*height;
+      var cvs = document.createElement('canvas');
+      var resize = document.createElement('canvas');
+      var width = imageContainer.naturalWidth;
+      var height = imageContainer.naturalHeight;
+      var ctx = cvs.getContext("2d");
+      var ratio;
+
+      if(height > 1080 || width > 1080){
+        if(width > height){
+          ratio = height/width;
+          width = 1080;
+          height = ratio*width;
+        }else{
+          ratio = width/height;
+          height = 1080;
+          width = ratio*height;
+        }
       }
-    }
 
-    cvs.width = width;
-    cvs.height = height;
-    ctx.clearRect(0, 0, width, height);
-    ctx.drawImage(imageContainer, 0, 0, width, height);
+      cvs.width = width;
+      cvs.height = height;
+      ctx.clearRect(0, 0, width, height);
+      ctx.drawImage(imageContainer, 0, 0, width, height);
 
-    fileData = cvs.toDataURL(type, 0.7);
+      deferred.resolve(cvs.toDataURL(type, 0.7));
+    }, 1000);
 
-    return fileData;
+    return deferred.promise;
   }
 
   ///////////////////////
@@ -161,10 +181,13 @@ function AppController ($rootScope, $timeout, $q, LoopBackAuth, Person) {
     $rootScope.loading = true;
   }
 
-  function disableLoading(){
+  function disableLoading(time){
+    if(!time)
+      time = 1000;
+
     $timeout(function(){
       $rootScope.loading = false;
-    }, 1000);
+    }, time);
   }
 
 }
