@@ -155,6 +155,60 @@ module.factory(
           method: "PUT"
         },
 
+        // INTERNAL. Use Person.favorites.findById() instead.
+        "prototype$__findById__favorites": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favorites/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.favorites.destroyById() instead.
+        "prototype$__destroyById__favorites": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favorites/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.favorites.updateById() instead.
+        "prototype$__updateById__favorites": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favorites/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Person.social.findById() instead.
+        "prototype$__findById__social": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/social/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.social.destroyById() instead.
+        "prototype$__destroyById__social": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/social/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.social.updateById() instead.
+        "prototype$__updateById__social": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/social/:fk",
+          method: "PUT"
+        },
+
         // INTERNAL. Use Person.avatar() instead.
         "prototype$__get__avatar": {
           url: urlBase + "/people/:id/avatar",
@@ -204,6 +258,60 @@ module.factory(
           },
           url: urlBase + "/people/:id/media/:fk",
           method: "PUT"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.findById() instead.
+        "prototype$__findById__favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.destroyById() instead.
+        "prototype$__destroyById__favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.updateById() instead.
+        "prototype$__updateById__favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.link() instead.
+        "prototype$__link__favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/rel/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.unlink() instead.
+        "prototype$__unlink__favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/rel/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.exists() instead.
+        "prototype$__exists__favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/rel/:fk",
+          method: "HEAD"
         },
 
         /**
@@ -343,6 +451,56 @@ module.factory(
           method: "GET"
         },
 
+        // INTERNAL. Use Person.favorites() instead.
+        "prototype$__get__favorites": {
+          isArray: true,
+          url: urlBase + "/people/:id/favorites",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.favorites.create() instead.
+        "prototype$__create__favorites": {
+          url: urlBase + "/people/:id/favorites",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Person.favorites.destroyAll() instead.
+        "prototype$__delete__favorites": {
+          url: urlBase + "/people/:id/favorites",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.favorites.count() instead.
+        "prototype$__count__favorites": {
+          url: urlBase + "/people/:id/favorites/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.social() instead.
+        "prototype$__get__social": {
+          isArray: true,
+          url: urlBase + "/people/:id/social",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.social.create() instead.
+        "prototype$__create__social": {
+          url: urlBase + "/people/:id/social",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Person.social.destroyAll() instead.
+        "prototype$__delete__social": {
+          url: urlBase + "/people/:id/social",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.social.count() instead.
+        "prototype$__count__social": {
+          url: urlBase + "/people/:id/social/count",
+          method: "GET"
+        },
+
         // INTERNAL. Use Person.media() instead.
         "prototype$__get__media": {
           isArray: true,
@@ -365,6 +523,31 @@ module.factory(
         // INTERNAL. Use Person.media.count() instead.
         "prototype$__count__media": {
           url: urlBase + "/people/:id/media/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia() instead.
+        "prototype$__get__favoriteMedia": {
+          isArray: true,
+          url: urlBase + "/people/:id/favoriteMedia",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.create() instead.
+        "prototype$__create__favoriteMedia": {
+          url: urlBase + "/people/:id/favoriteMedia",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.destroyAll() instead.
+        "prototype$__delete__favoriteMedia": {
+          url: urlBase + "/people/:id/favoriteMedia",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.count() instead.
+        "prototype$__count__favoriteMedia": {
+          url: urlBase + "/people/:id/favoriteMedia/count",
           method: "GET"
         },
 
@@ -954,6 +1137,12 @@ module.factory(
           method: "POST"
         },
 
+        // INTERNAL. Use Favorite.person() instead.
+        "::get::Favorite::person": {
+          url: urlBase + "/favorites/:id/person",
+          method: "GET"
+        },
+
         // INTERNAL. Use Metadata.person() instead.
         "::get::Metadata::person": {
           url: urlBase + "/metadata/:id/person",
@@ -1175,6 +1364,608 @@ module.factory(
     */
     R.modelName = "Person";
 
+    /**
+     * @ngdoc object
+     * @name lbServices.Person.favorites
+     * @header lbServices.Person.favorites
+     * @object
+     * @description
+     *
+     * The object `Person.favorites` groups methods
+     * manipulating `Favorite` instances related to `Person`.
+     *
+     * Call {@link lbServices.Person#favorites Person.favorites()}
+     * to query all related instances.
+     */
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person#favorites
+         * @methodOf lbServices.Person
+         *
+         * @description
+         *
+         * Queries favorites of Person.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        R.favorites = function() {
+          var TargetResource = $injector.get("Favorite");
+          var action = TargetResource["::get::Person::favorites"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favorites#count
+         * @methodOf lbServices.Person.favorites
+         *
+         * @description
+         *
+         * Counts favorites of Person.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        R.favorites.count = function() {
+          var TargetResource = $injector.get("Favorite");
+          var action = TargetResource["::count::Person::favorites"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favorites#create
+         * @methodOf lbServices.Person.favorites
+         *
+         * @description
+         *
+         * Creates a new instance in favorites of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        R.favorites.create = function() {
+          var TargetResource = $injector.get("Favorite");
+          var action = TargetResource["::create::Person::favorites"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favorites#createMany
+         * @methodOf lbServices.Person.favorites
+         *
+         * @description
+         *
+         * Creates a new instance in favorites of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        R.favorites.createMany = function() {
+          var TargetResource = $injector.get("Favorite");
+          var action = TargetResource["::createMany::Person::favorites"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favorites#destroyAll
+         * @methodOf lbServices.Person.favorites
+         *
+         * @description
+         *
+         * Deletes all favorites of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.favorites.destroyAll = function() {
+          var TargetResource = $injector.get("Favorite");
+          var action = TargetResource["::delete::Person::favorites"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favorites#destroyById
+         * @methodOf lbServices.Person.favorites
+         *
+         * @description
+         *
+         * Delete a related item by id for favorites.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for favorites
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.favorites.destroyById = function() {
+          var TargetResource = $injector.get("Favorite");
+          var action = TargetResource["::destroyById::Person::favorites"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favorites#findById
+         * @methodOf lbServices.Person.favorites
+         *
+         * @description
+         *
+         * Find a related item by id for favorites.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for favorites
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        R.favorites.findById = function() {
+          var TargetResource = $injector.get("Favorite");
+          var action = TargetResource["::findById::Person::favorites"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favorites#updateById
+         * @methodOf lbServices.Person.favorites
+         *
+         * @description
+         *
+         * Update a related item by id for favorites.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for favorites
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        R.favorites.updateById = function() {
+          var TargetResource = $injector.get("Favorite");
+          var action = TargetResource["::updateById::Person::favorites"];
+          return action.apply(R, arguments);
+        };
+    /**
+     * @ngdoc object
+     * @name lbServices.Person.social
+     * @header lbServices.Person.social
+     * @object
+     * @description
+     *
+     * The object `Person.social` groups methods
+     * manipulating `Social` instances related to `Person`.
+     *
+     * Call {@link lbServices.Person#social Person.social()}
+     * to query all related instances.
+     */
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person#social
+         * @methodOf lbServices.Person
+         *
+         * @description
+         *
+         * Queries social of Person.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        R.social = function() {
+          var TargetResource = $injector.get("Social");
+          var action = TargetResource["::get::Person::social"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.social#count
+         * @methodOf lbServices.Person.social
+         *
+         * @description
+         *
+         * Counts social of Person.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        R.social.count = function() {
+          var TargetResource = $injector.get("Social");
+          var action = TargetResource["::count::Person::social"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.social#create
+         * @methodOf lbServices.Person.social
+         *
+         * @description
+         *
+         * Creates a new instance in social of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        R.social.create = function() {
+          var TargetResource = $injector.get("Social");
+          var action = TargetResource["::create::Person::social"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.social#createMany
+         * @methodOf lbServices.Person.social
+         *
+         * @description
+         *
+         * Creates a new instance in social of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        R.social.createMany = function() {
+          var TargetResource = $injector.get("Social");
+          var action = TargetResource["::createMany::Person::social"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.social#destroyAll
+         * @methodOf lbServices.Person.social
+         *
+         * @description
+         *
+         * Deletes all social of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.social.destroyAll = function() {
+          var TargetResource = $injector.get("Social");
+          var action = TargetResource["::delete::Person::social"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.social#destroyById
+         * @methodOf lbServices.Person.social
+         *
+         * @description
+         *
+         * Delete a related item by id for social.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for social
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.social.destroyById = function() {
+          var TargetResource = $injector.get("Social");
+          var action = TargetResource["::destroyById::Person::social"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.social#findById
+         * @methodOf lbServices.Person.social
+         *
+         * @description
+         *
+         * Find a related item by id for social.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for social
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        R.social.findById = function() {
+          var TargetResource = $injector.get("Social");
+          var action = TargetResource["::findById::Person::social"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.social#updateById
+         * @methodOf lbServices.Person.social
+         *
+         * @description
+         *
+         * Update a related item by id for social.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for social
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        R.social.updateById = function() {
+          var TargetResource = $injector.get("Social");
+          var action = TargetResource["::updateById::Person::social"];
+          return action.apply(R, arguments);
+        };
     /**
      * @ngdoc object
      * @name lbServices.Person.avatar
@@ -1671,6 +2462,1784 @@ module.factory(
           var action = TargetResource["::updateById::Person::media"];
           return action.apply(R, arguments);
         };
+    /**
+     * @ngdoc object
+     * @name lbServices.Person.favoriteMedia
+     * @header lbServices.Person.favoriteMedia
+     * @object
+     * @description
+     *
+     * The object `Person.favoriteMedia` groups methods
+     * manipulating `Metadata` instances related to `Person`.
+     *
+     * Call {@link lbServices.Person#favoriteMedia Person.favoriteMedia()}
+     * to query all related instances.
+     */
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person#favoriteMedia
+         * @methodOf lbServices.Person
+         *
+         * @description
+         *
+         * Queries favoriteMedia of Person.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favoriteMedia = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::get::Person::favoriteMedia"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favoriteMedia#count
+         * @methodOf lbServices.Person.favoriteMedia
+         *
+         * @description
+         *
+         * Counts favoriteMedia of Person.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        R.favoriteMedia.count = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::count::Person::favoriteMedia"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favoriteMedia#create
+         * @methodOf lbServices.Person.favoriteMedia
+         *
+         * @description
+         *
+         * Creates a new instance in favoriteMedia of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favoriteMedia.create = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::create::Person::favoriteMedia"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favoriteMedia#createMany
+         * @methodOf lbServices.Person.favoriteMedia
+         *
+         * @description
+         *
+         * Creates a new instance in favoriteMedia of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favoriteMedia.createMany = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::createMany::Person::favoriteMedia"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favoriteMedia#destroyAll
+         * @methodOf lbServices.Person.favoriteMedia
+         *
+         * @description
+         *
+         * Deletes all favoriteMedia of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.favoriteMedia.destroyAll = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::delete::Person::favoriteMedia"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favoriteMedia#destroyById
+         * @methodOf lbServices.Person.favoriteMedia
+         *
+         * @description
+         *
+         * Delete a related item by id for favoriteMedia.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for favoriteMedia
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.favoriteMedia.destroyById = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::destroyById::Person::favoriteMedia"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favoriteMedia#exists
+         * @methodOf lbServices.Person.favoriteMedia
+         *
+         * @description
+         *
+         * Check the existence of favoriteMedia relation to an item by id.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for favoriteMedia
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favoriteMedia.exists = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::exists::Person::favoriteMedia"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favoriteMedia#findById
+         * @methodOf lbServices.Person.favoriteMedia
+         *
+         * @description
+         *
+         * Find a related item by id for favoriteMedia.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for favoriteMedia
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favoriteMedia.findById = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::findById::Person::favoriteMedia"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favoriteMedia#link
+         * @methodOf lbServices.Person.favoriteMedia
+         *
+         * @description
+         *
+         * Add a related item by id for favoriteMedia.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for favoriteMedia
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favoriteMedia.link = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::link::Person::favoriteMedia"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favoriteMedia#unlink
+         * @methodOf lbServices.Person.favoriteMedia
+         *
+         * @description
+         *
+         * Remove the favoriteMedia relation to an item by id.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for favoriteMedia
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.favoriteMedia.unlink = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::unlink::Person::favoriteMedia"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Person.favoriteMedia#updateById
+         * @methodOf lbServices.Person.favoriteMedia
+         *
+         * @description
+         *
+         * Update a related item by id for favoriteMedia.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - User id
+         *
+         *  - `fk` – `{*}` - Foreign key for favoriteMedia
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.favoriteMedia.updateById = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::updateById::Person::favoriteMedia"];
+          return action.apply(R, arguments);
+        };
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Favorite
+ * @header lbServices.Favorite
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Favorite` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory(
+  "Favorite",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/favorites/:id",
+      { 'id': '@id' },
+      {
+
+        // INTERNAL. Use Favorite.person() instead.
+        "prototype$__get__person": {
+          url: urlBase + "/favorites/:id/person",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Favorite.metadata() instead.
+        "prototype$__get__metadata": {
+          url: urlBase + "/favorites/:id/metadata",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#create
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        "create": {
+          url: urlBase + "/favorites",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#createMany
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        "createMany": {
+          isArray: true,
+          url: urlBase + "/favorites",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#upsert
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        "upsert": {
+          url: urlBase + "/favorites",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#exists
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Check whether a model instance exists in the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `exists` – `{boolean=}` - 
+         */
+        "exists": {
+          url: urlBase + "/favorites/:id/exists",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#findById
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Find a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         *  - `filter` – `{object=}` - Filter defining fields and include
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        "findById": {
+          url: urlBase + "/favorites/:id",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#find
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Find all instances of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        "find": {
+          isArray: true,
+          url: urlBase + "/favorites",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#findOne
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Find first instance of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        "findOne": {
+          url: urlBase + "/favorites/findOne",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#updateAll
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "updateAll": {
+          url: urlBase + "/favorites/update",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#deleteById
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "deleteById": {
+          url: urlBase + "/favorites/:id",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#count
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Count instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        "count": {
+          url: urlBase + "/favorites/count",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#prototype$updateAttributes
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Update attributes for a model instance and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        "prototype$updateAttributes": {
+          url: urlBase + "/favorites/:id",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#createChangeStream
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` - 
+         */
+        "createChangeStream": {
+          url: urlBase + "/favorites/change-stream",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Person.favorites.findById() instead.
+        "::findById::Person::favorites": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favorites/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.favorites.destroyById() instead.
+        "::destroyById::Person::favorites": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favorites/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.favorites.updateById() instead.
+        "::updateById::Person::favorites": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favorites/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Person.favorites() instead.
+        "::get::Person::favorites": {
+          isArray: true,
+          url: urlBase + "/people/:id/favorites",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.favorites.create() instead.
+        "::create::Person::favorites": {
+          url: urlBase + "/people/:id/favorites",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Person.favorites.createMany() instead.
+        "::createMany::Person::favorites": {
+          isArray: true,
+          url: urlBase + "/people/:id/favorites",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Person.favorites.destroyAll() instead.
+        "::delete::Person::favorites": {
+          url: urlBase + "/people/:id/favorites",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.favorites.count() instead.
+        "::count::Person::favorites": {
+          url: urlBase + "/people/:id/favorites/count",
+          method: "GET"
+        },
+      }
+    );
+
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#updateOrCreate
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Favorite` object.)
+         * </em>
+         */
+        R["updateOrCreate"] = R["upsert"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#update
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R["update"] = R["updateAll"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#destroyById
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R["destroyById"] = R["deleteById"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#removeById
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R["removeById"] = R["deleteById"];
+
+
+    /**
+    * @ngdoc property
+    * @name lbServices.Favorite#modelName
+    * @propertyOf lbServices.Favorite
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `Favorite`.
+    */
+    R.modelName = "Favorite";
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#person
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Fetches belongsTo relation person.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Person` object.)
+         * </em>
+         */
+        R.person = function() {
+          var TargetResource = $injector.get("Person");
+          var action = TargetResource["::get::Favorite::person"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Favorite#metadata
+         * @methodOf lbServices.Favorite
+         *
+         * @description
+         *
+         * Fetches belongsTo relation metadata.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Metadata` object.)
+         * </em>
+         */
+        R.metadata = function() {
+          var TargetResource = $injector.get("Metadata");
+          var action = TargetResource["::get::Favorite::metadata"];
+          return action.apply(R, arguments);
+        };
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Social
+ * @header lbServices.Social
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Social` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory(
+  "Social",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/social/:id",
+      { 'id': '@id' },
+      {
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#create
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        "create": {
+          url: urlBase + "/social",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#createMany
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        "createMany": {
+          isArray: true,
+          url: urlBase + "/social",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#upsert
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        "upsert": {
+          url: urlBase + "/social",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#exists
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Check whether a model instance exists in the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `exists` – `{boolean=}` - 
+         */
+        "exists": {
+          url: urlBase + "/social/:id/exists",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#findById
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Find a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         *  - `filter` – `{object=}` - Filter defining fields and include
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        "findById": {
+          url: urlBase + "/social/:id",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#find
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Find all instances of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        "find": {
+          isArray: true,
+          url: urlBase + "/social",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#findOne
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Find first instance of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        "findOne": {
+          url: urlBase + "/social/findOne",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#updateAll
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "updateAll": {
+          url: urlBase + "/social/update",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#deleteById
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        "deleteById": {
+          url: urlBase + "/social/:id",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#count
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Count instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        "count": {
+          url: urlBase + "/social/count",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#prototype$updateAttributes
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Update attributes for a model instance and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        "prototype$updateAttributes": {
+          url: urlBase + "/social/:id",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#createChangeStream
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` - 
+         */
+        "createChangeStream": {
+          url: urlBase + "/social/change-stream",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Person.social.findById() instead.
+        "::findById::Person::social": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/social/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.social.destroyById() instead.
+        "::destroyById::Person::social": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/social/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.social.updateById() instead.
+        "::updateById::Person::social": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/social/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Person.social() instead.
+        "::get::Person::social": {
+          isArray: true,
+          url: urlBase + "/people/:id/social",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.social.create() instead.
+        "::create::Person::social": {
+          url: urlBase + "/people/:id/social",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Person.social.createMany() instead.
+        "::createMany::Person::social": {
+          isArray: true,
+          url: urlBase + "/people/:id/social",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Person.social.destroyAll() instead.
+        "::delete::Person::social": {
+          url: urlBase + "/people/:id/social",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.social.count() instead.
+        "::count::Person::social": {
+          url: urlBase + "/people/:id/social/count",
+          method: "GET"
+        },
+      }
+    );
+
+
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#updateOrCreate
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Social` object.)
+         * </em>
+         */
+        R["updateOrCreate"] = R["upsert"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#update
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R["update"] = R["updateAll"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#destroyById
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R["destroyById"] = R["deleteById"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Social#removeById
+         * @methodOf lbServices.Social
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R["removeById"] = R["deleteById"];
+
+
+    /**
+    * @ngdoc property
+    * @name lbServices.Social#modelName
+    * @propertyOf lbServices.Social
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `Social`.
+    */
+    R.modelName = "Social";
+
 
     return R;
   }]);
@@ -2235,6 +4804,60 @@ module.factory(
           method: "PUT"
         },
 
+        // INTERNAL. Use Person.favoriteMedia.findById() instead.
+        "::findById::Person::favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.destroyById() instead.
+        "::destroyById::Person::favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.updateById() instead.
+        "::updateById::Person::favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.link() instead.
+        "::link::Person::favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/rel/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.unlink() instead.
+        "::unlink::Person::favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/rel/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.exists() instead.
+        "::exists::Person::favoriteMedia": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/people/:id/favoriteMedia/rel/:fk",
+          method: "HEAD"
+        },
+
         // INTERNAL. Use Person.media() instead.
         "::get::Person::media": {
           isArray: true,
@@ -2264,6 +4887,44 @@ module.factory(
         // INTERNAL. Use Person.media.count() instead.
         "::count::Person::media": {
           url: urlBase + "/people/:id/media/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia() instead.
+        "::get::Person::favoriteMedia": {
+          isArray: true,
+          url: urlBase + "/people/:id/favoriteMedia",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.create() instead.
+        "::create::Person::favoriteMedia": {
+          url: urlBase + "/people/:id/favoriteMedia",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.createMany() instead.
+        "::createMany::Person::favoriteMedia": {
+          isArray: true,
+          url: urlBase + "/people/:id/favoriteMedia",
+          method: "POST"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.destroyAll() instead.
+        "::delete::Person::favoriteMedia": {
+          url: urlBase + "/people/:id/favoriteMedia",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use Person.favoriteMedia.count() instead.
+        "::count::Person::favoriteMedia": {
+          url: urlBase + "/people/:id/favoriteMedia/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use Favorite.metadata() instead.
+        "::get::Favorite::metadata": {
+          url: urlBase + "/favorites/:id/metadata",
           method: "GET"
         },
 
@@ -2823,7 +5484,7 @@ module.factory(
   "Media",
   ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
     var R = Resource(
-      urlBase + "/Media/:id",
+      urlBase + "/media/:id",
       { 'id': '@id' },
       {
 
@@ -2860,7 +5521,7 @@ module.factory(
          */
         "getContainers": {
           isArray: true,
-          url: urlBase + "/Media",
+          url: urlBase + "/media",
           method: "GET"
         },
 
@@ -2900,7 +5561,7 @@ module.factory(
          * </em>
          */
         "createContainer": {
-          url: urlBase + "/Media",
+          url: urlBase + "/media",
           method: "POST"
         },
 
@@ -2934,7 +5595,7 @@ module.factory(
          *  - `` – `{undefined=}` - 
          */
         "destroyContainer": {
-          url: urlBase + "/Media/:container",
+          url: urlBase + "/media/:container",
           method: "DELETE"
         },
 
@@ -2969,7 +5630,7 @@ module.factory(
          * </em>
          */
         "getContainer": {
-          url: urlBase + "/Media/:container",
+          url: urlBase + "/media/:container",
           method: "GET"
         },
 
@@ -3005,7 +5666,7 @@ module.factory(
          */
         "getFiles": {
           isArray: true,
-          url: urlBase + "/Media/:container/files",
+          url: urlBase + "/media/:container/files",
           method: "GET"
         },
 
@@ -3042,7 +5703,7 @@ module.factory(
          * </em>
          */
         "getFile": {
-          url: urlBase + "/Media/:container/files/:file",
+          url: urlBase + "/media/:container/files/:file",
           method: "GET"
         },
 
@@ -3078,7 +5739,7 @@ module.factory(
          *  - `` – `{undefined=}` - 
          */
         "removeFile": {
-          url: urlBase + "/Media/:container/files/:file",
+          url: urlBase + "/media/:container/files/:file",
           method: "DELETE"
         },
 
@@ -3119,7 +5780,7 @@ module.factory(
          *  - `result` – `{object=}` - 
          */
         "upload": {
-          url: urlBase + "/Media/:container/upload",
+          url: urlBase + "/media/:container/upload",
           method: "POST"
         },
 
@@ -3155,7 +5816,7 @@ module.factory(
          * This method returns no data.
          */
         "download": {
-          url: urlBase + "/Media/:container/download/:file",
+          url: urlBase + "/media/:container/download/:file",
           method: "GET"
         },
       }

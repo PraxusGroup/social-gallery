@@ -1,5 +1,6 @@
 {
   "name": "Media",
+  "plural": "media",
   "base": "Model",
   "idInjection": true,
   "properties": {},

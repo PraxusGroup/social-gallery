@@ -92,6 +92,29 @@
   display: none;
 }
 
+.ramjet-hidden {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 0.7% !important;
+  padding-right: 0.7% !important;
+  padding-bottom: 0% !important;
+  z-index: 0;
+}
+
+.ramjet-con {
+  position: relative !important;
+}
+
+.fileupload {
+  cursor: pointer;
+}
+
+[for="caption"], [for="title"] {
+  left: 0 !important;
+}
+
 ng-md-icon {
   margin: auto;
   background-repeat: no-repeat no-repeat;
@@ -102,7 +125,12 @@ ng-md-icon {
   width: 24px;
 }
 
-nav .brand-logo {
+.upload-main-icon {
+  width: auto !important;
+  height: auto !important;
+}
+
+nav .brand-logo, nav .button-collapse {
   padding: 0px 15px;
 }
 
@@ -113,17 +141,25 @@ nav .brand-logo {
 .upload-img-preview {
   background-position: center center;
   background-size: cover;
+  display: inline-block;
+  height: 100%;
 }
 
-.trick-image {
-  width: 500px;
-  height: 500px;
-  display: inline-block;
+.aspect-ratio {
+  position: relative;
 }
-
-.upload-card {
-  max-width: 500px;
-  display: inline-block;
+.aspect-ratio:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+}
+.aspect-ratio > .content {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
 }
 
 .top-loader {

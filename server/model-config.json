@@ -32,6 +32,12 @@
   "Person": {
     "dataSource": "db"
   },
+  "Favorite": {
+    "dataSource": "db"
+  },
+  "Social": {
+    "dataSource": "db"
+  },
   "Metadata": {
     "dataSource": "db"
   },

@@ -33,7 +33,8 @@
     /* jQuery+Angular */
     "$": false,
     "angular": false,
-    "Materialize": false
+    "Materialize": false,
+    "ramjet": false
     /* custom general.js  */
   }
 }

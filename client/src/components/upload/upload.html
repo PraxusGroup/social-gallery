@@ -1,45 +1,68 @@
-<div class="container"
-  flow-init
-  flow-files-added="$root.filesAdded( $files, $event, $flow )">
+<div class="container">
 
-  <div class="row" flow-drop>
+  <div class="row"
+    ngf-drop
+    ng-model="file"
+    ngf-drag-over-class="dragover"
+    ngf-multiple="false" ngf-allow-dir="false"
+    ngf-accept="'image/*'">
+
     <form ng-submit="submitUpload()">
-      <div class="col s12"><h3>Upload</h3></div>
-      <div class="col s12">
-        <div class="flow-container col s12 valign-wrapper fileupload"
-            ng-class="{'grey darken-4 white-text': !file}"
-            flow-drag-enter="style={border:'4px solid green', 'border-radius': '3px'}"
-            flow-drag-leave="style={}"
-            ng-style="style">
-          <div class="col s12 center-align valign">
-            <div ng-show="!file">
-              <h4>Drag and drop your image here</h4>
-              <div class="hidden">
-                <input type="file" flow-btn/>
-              </div>
-            </div>
+      <div class="col s12"><h3></h3></div>
 
-            <div ng-show="file">
-              <div class="row center-align grey-text text-darken-3">
-                <div class="card upload-card left-align">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img class="trick-image upload-img-preview" style="background-image: url({{ fileData }})"/>
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title grey-text text-darken-3">Card Title</span>
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action right-align">
-                    <a class="waves-effect waves-teal btn-flat" flow-btn>Upload Image</a>
-                  </div>
+      <div class="col s12 ramjet-con">
+        <div id="flow-container" class="flow-container col s12 no-padding valign-wrapper grey darken-4 white-text fileupload"
+            ng-show="!fileSelected"
+            ng-init="cameraIcon = 'camera_alt'"
+            ng-mouseover="cameraIcon = 'cloud_upload'"
+            ng-mouseleave="cameraIcon = 'camera_alt'"
+            ng-click="transform()">
+
+          <div class="col s12 no-padding center-align valign">
+
+            <ng-md-icon
+              icon="{{cameraIcon}}"
+              style="fill: white"
+              class="upload-main-icon"
+              options='{"rotation": "none"}'
+              size="84">
+            </ng-md-icon>
+
+            <h4>Upload Photos</h4>
+            <div class="hidden">
+              <input type="file" ngf-select ng-model="file"/>
+            </div>
+          </div>
+
+        </div><!-- End of Flow Fileupload Container -->
+
+        <div id="upload-card" class="col s12 m8 l6 offset-l3 offset-m2 no-padding ramjet-hidden hidden">
+          <div class="row center-align grey-text text-darken-3">
+            <div class="card left-align">
+              <div class="card-image waves-effect waves-block waves-light aspect-ratio">
+                <img class="upload-img-preview content" style="background-image: url({{ fileData }})"/>
+              </div>
+              <div class="card-content">
+                <div class="input-field">
+                  <input id="title" type="text" class="validate">
+                  <label for="title">Title</label>
+                </div>
+                <div class="input-field">
+                  <textarea id="caption" class="materialize-textarea" length="144"></textarea>
+                  <label for="caption">Caption</label>
                 </div>
               </div>
-
+              <div class="card-action right-align">
+                <a class="waves-effect waves-teal btn-flat" ng-click="$flow.resume()">Upload Image</a>
+                <a class="waves-effect waves-teal btn-flat" >Cancel</a>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
+
     </form>
   </div>
+
 </div>

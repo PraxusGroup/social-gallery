@@ -1,26 +1,26 @@
 angular
   .module('social-gallery', [
     'lbServices',
-    'ngMdIcons',
     'ngAnimate',
-    'ui.router',
-    'flow'
+    'ngFileUpload',
+    'ngMdIcons',
+    'ui.router'
   ])
   .config([
     '$stateProvider',
     '$urlRouterProvider',
-    'flowFactoryProvider',
     AppConfig
   ])
   .controller('AppController', [
     '$rootScope',
     '$timeout',
-    'Person',
+    '$q',
     'LoopBackAuth',
+    'Person',
     AppController
   ]);
 
-function AppConfig ($stateProvider, $urlRouterProvider, flowFactoryProvider){
+function AppConfig ($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('home', {
       url: '/',
@@ -39,15 +39,9 @@ function AppConfig ($stateProvider, $urlRouterProvider, flowFactoryProvider){
     });
 
   $urlRouterProvider.otherwise('home');
-
-  flowFactoryProvider.defaults = {
-    target: 'api/media/images/upload',
-    permanentErrors: [404, 500, 501],
-    singleFile: true
-  };
 }
 
-function AppController ($rootScope, $timeout, Person, LoopBackAuth) {
+function AppController ($rootScope, $timeout, $q, LoopBackAuth, Person) {
 
   $(".button-collapse").sideNav();
   $('.modal-trigger').leanModal();
@@ -65,6 +59,24 @@ function AppController ($rootScope, $timeout, Person, LoopBackAuth) {
 
   $rootScope.$on('$viewContentLoading', enableLoading);
   $rootScope.$on('$viewContentLoaded', disableLoading);
+
+  ///////////////////////
+  ///// File Handling
+  ///////////////////////
+
+  $rootScope.getFileData = function getFileData(file){
+    var deferred = $q.defer();
+
+    var reader = new FileReader();
+
+    reader.onload = function(event) {
+      deferred.resolve(event.srcElement.result);
+    };
+
+    reader.readAsDataURL(file);
+
+    return deferred.promise;
+  };
 
   ///////////////////////
   ///// Auth Services
