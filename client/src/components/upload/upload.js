@@ -89,6 +89,4 @@ function UploadController ($scope, $rootScope, $timeout, Upload, Metadata) {
     from.classList.add('hidden');
   }
 
-
-
 }

@@ -74,13 +74,47 @@ function AppController ($rootScope, $timeout, $q, LoopBackAuth, Person) {
     var reader = new FileReader();
 
     reader.onload = function(event) {
-      deferred.resolve(event.srcElement.result);
+      deferred.resolve(compressImage(event.srcElement.result, file.type));
     };
 
     reader.readAsDataURL(file);
 
     return deferred.promise;
   };
+
+
+  function compressImage(fileData, type){
+    var imageContainer = new Image();
+    imageContainer.src = fileData;
+
+    var cvs = document.createElement('canvas');
+    var resize = document.createElement('canvas');
+    var width = imageContainer.naturalWidth;
+    var height = imageContainer.naturalHeight;
+    var ctx = cvs.getContext("2d");
+    var ratio;
+
+    if(height > 1080 || width > 1080){
+      if(width > height){
+        ratio = height/width;
+        width = 1080;
+        height = ratio*width;
+      }else{
+        ratio = width/height;
+        height = 1080;
+        width = ratio*height;
+      }
+    }
+
+    cvs.width = width;
+    cvs.height = height;
+    ctx.clearRect(0, 0, width, height);
+    ctx.drawImage(imageContainer, 0, 0, width, height);
+
+    fileData = cvs.toDataURL(type, 0.7);
+
+    return fileData;
+  }
 
   ///////////////////////
   ///// Auth Services

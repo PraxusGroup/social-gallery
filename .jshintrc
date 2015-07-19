@@ -30,6 +30,7 @@
     "navigator": false,
     "alert": false,
     "FileReader": false,
+    "Image": false,
     /* jQuery+Angular */
     "$": false,
     "angular": false,
