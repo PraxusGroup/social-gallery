@@ -12,12 +12,12 @@ function RegisterController ($scope, $rootScope, Person, LoopBackAuth) {
 
   $scope.submitRegister = function(){
 
-    if($scope.register.password !== $scope.confirm){
+    if($scope.user.password !== $scope.confirm){
       return Materialize.toast('Passwords do not match', 4000);
     }
 
     Person
-      .create($scope.register)
+      .create($scope.user)
       .$promise
       .then(afterRegister, registerError);
 
@@ -26,7 +26,7 @@ function RegisterController ($scope, $rootScope, Person, LoopBackAuth) {
   function afterRegister(response){
     Materialize.toast('Success!! Logging you in.', 4000);
 
-    $rootScope.loginUser($scope.register)
+    $rootScope.loginUser($scope.user)
       .then(function(){
         $('#RegisterModal').closeModal();
       });
